@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Shadows+Into+Light" rel="stylesheet">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <main class="content">
+        <div class="SN-container">
+            <div class="SN-usercontainer">
+                <div class="SN-userimg"></div>
+                <div id="SN-greeting" v-cloak>
+                    <p>{{selectedGreeting}}</p>
+                    <p class="SN-name">Your Name</p>
+                </div>
+            </div>
+            <a class="SN-menuItem active" href="home.html"><i class="fas fa-lg fa-home"></i>Home</a>
+            <a class="SN-menuItem" href="calendar.html"><i class="fas fa-lg fa-calendar-alt"></i>Calendar</a>
+            <a class="SN-menuItem" href="groups.html"><i class="fas fa-lg fa-users"></i>Groups</a>
+        </div>
+        <div class="MN-container">
+            <h1 class="MN-header">Users</h1>
+            <div class="MN-search">
+                <i class="fas fa-search"></i>
+                <input placeholder="Search Users" id="MN-searchinp" onkeyup="searchUsers()" />
+            </div>
+            <div id="user-list">
+                <form v-on:submit.prevent="addNewUser">
+                    <label for="new-todo">Add User</label>
+                    <input v-model="newUserName" id="new-user" placeholder="User Name" required>
+                    <button><i class="fas fa-user-plus"></i></button>
+                </form>
+                <ul id="MN-userlist">
+                    <li is="user-name" v-for="(user, index) in users" v-bind:key="user.id" v-bind:title="user.name" v-bind:item="user.phone" v-on:remove="users.splice(index, 1)"></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

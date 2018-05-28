@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Shadows+Into+Light" rel="stylesheet">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <main class="content">
+        <div class="SN-container">
+            <div class="SN-usercontainer">
+                <div class="SN-userimg"></div>
+                <div id="SN-greeting" v-cloak>
+                    <p>{{selectedGreeting}}</p>
+                    <p class="SN-name">Your Name</p>
+                </div>
+            </div>
+            <a class="SN-menuItem" href="home.html"><i class="fas fa-lg fa-home"></i>Home</a>
+            <a class="SN-menuItem active" href="calendar.html"><i class="fas fa-lg fa-calendar-alt"></i>Calendar</a>
+            <a class="SN-menuItem" href="groups.html"><i class="fas fa-lg fa-users"></i>Groups</a>
+        </div>
+        <div class="MN-container">
+            <h1 class="MN-header">Calendar</h1>
+            <div class="MN-desktop">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=e7dkl83quk4rdal4mq1a074cao%40group.calendar.google.com&amp;color=%232952A3&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <div class="MN-mobile">
+                <a href="https://calendar.google.com/calendar/embed?src=e7dkl83quk4rdal4mq1a074cao%40group.calendar.google.com&ctz=America%2FNew_York">
+                    <div class="MN-calimg">
+                        <img src="images/calendar.jpg" />
+                    </div>
+                    <span>View calendar</span>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

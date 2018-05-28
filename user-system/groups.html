@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Shadows+Into+Light" rel="stylesheet">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <main class="content">
+        <div class="SN-container">
+            <div class="SN-usercontainer">
+                <div class="SN-userimg"></div>
+                <div id="SN-greeting" v-cloak>
+                    <p>{{selectedGreeting}}</p>
+                    <p class="SN-name">Your Name</p>
+                </div>
+            </div>
+            <a class="SN-menuItem" href="home.html"><i class="fas fa-lg fa-home"></i>Home</a>
+            <a class="SN-menuItem" href="calendar.html"><i class="fas fa-lg fa-calendar-alt"></i>Calendar</a>
+            <a class="SN-menuItem active" href="groups.html"><i class="fas fa-lg fa-users"></i>Groups</a>
+        </div>
+        <div id="MN-groups" class="MN-container">
+            <h1 class="MN-header">Groups</h1>
+            <span v-on:click="all = true" class="MN-groupOpt group-active">All</span>
+            <span v-on:click="all = false" class="MN-groupOpt">My Groups</span>
+            <div class="MN-groupList">
+                <template v-if="all">
+                    <div class='MN-group MN-managers'>
+                        <h2>Managers</h2>
+                        <p>4 members</p>
+                    </div>
+                    <div class='MN-group MN-admin'>
+                        <h2>Administrators</h2>
+                        <p>8 members</p>
+                    </div>
+                    <div class='MN-group MN-pm'>
+                        <h2>Project Managers</h2>
+                        <p>10 members</p>
+                    </div>
+                    <div class='MN-group MN-graphic'>
+                        <h2>Graphic Designers</h2>
+                        <p>6 members</p>
+                    </div>
+                    <div class='MN-group MN-developers'>
+                        <h2>Developers</h2>
+                        <p>6 members</p>
+                    </div>
+                </template>
+                <template v-else="all">
+                    <div class='MN-group MN-developers'>
+                        <h2>Developers</h2>
+                        <p>4 members</p>
+                    </div>
+                    <div class='MN-group MN-admin'>
+                        <h2>Administrators</h2>
+                        <p>8 members</p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
